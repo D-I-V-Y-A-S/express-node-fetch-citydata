@@ -1,0 +1,21 @@
+// data->data.js
+
+// then export data from data.js and import it in controller.js.
+// on controller.js write the function and export it to router.
+// import controller on router and define paths and export it.
+// import router on app.js .
+// exe starts on app.js then router.js then controller.js then data.js .
+
+// if /:id is given in routes we can use in controller as request.params.id and retrieve the data.
+// next path should be /city/:city or else if /:city on entering city name on url , error message of /:id path gets exe as it defined above /:city.
+
+//app.get-app.get('route',arrowfunc)
+//app.use-app.use('route',route_export_name)
+
+//on url/:id is integer but it takes as string so parseInt is used.
+
+//on exporting  on userController and importing on router use {} for func_names.
+
+//collection->post,url,body,json data . request post pana userRouter controller . 
+
+//environment->variable 'url' value is path then on collection type {} url suggestion is shown then type only needed path eg:/city.
