@@ -1,7 +1,19 @@
 const Data = require('../data/data')
 
-const getAllUserDetail = (request, response) => {
-   response.status(200).send(Data)
+const cityModel = require('../models/cityModel')
+
+// const getAllUserDetail = (request, response) => {
+//    response.status(200).send(Data)
+// }
+
+const getAllUserDetail= async (request, response) => {
+   try {
+      const cities = await cityModel.find()          //until this operation completes no response is send
+      response.status(200).json(cities)
+   }
+   catch {
+      response.status(500).send({ message: error.message })
+   }
 }
 
 const getExpectedUserDetailById = (request, response) => {
