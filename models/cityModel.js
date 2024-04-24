@@ -1,12 +1,13 @@
-const mongoose=require('mongoose')
+const mongoose=require('mongoose')  //to create schema mongoose is imported.it will be like a json of json.ODM library.
 
+// mongoose.Schema({key condition parameters,collection})
 const citySchema=new mongoose.Schema(
     {
         id:{
             type:Number,
             required:true,
             unique:true,
-            //index:true-> when order matters,can perform operations like sort etc.,
+            //index:true-> when order matters;so that can perform operations like sort etc.,
         },
         city:{
             type:String,
@@ -15,7 +16,7 @@ const citySchema=new mongoose.Schema(
         state:{
             type:String,
             required:true,
-            enum:["TamilNadu","kerala","AP","Telangana"]
+            // enum:["TamilNadu","kerala","AP","Telangana"]  
         },
         pincode:{
             type:Number,
@@ -26,15 +27,19 @@ const citySchema=new mongoose.Schema(
         }
     },
     {
-        collection:'city'                                     //already exists mean it uses orelse creates a new one.
+        collection:'city'             //already exists means it uses orelse creates a new one.
     }
 )
 
 
 module.exports=mongoose.model('city',citySchema)
 
-
 //any data added in 'city; should follow the citySchema
+
+
+// install
+// 1.npm install mongoosh
+// 2.npm install --save-dev dotenv
 
 
 
